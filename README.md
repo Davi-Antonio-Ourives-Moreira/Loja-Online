@@ -10,3 +10,10 @@
 </h2>
 
 # Tecnologias utilizadas:
+
+<li>Python</li>
+<li>Flask</li>
+<li>Fastapi</li>
+<li>Pymongo</li>
+<li>Mercado pago</li>
+
