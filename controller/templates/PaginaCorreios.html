@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Correios</title>
+
+        <style>
+            body{
+                background-color: white;
+            }
+            
+            .container-title{
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 50px;
+                background-color: gray;
+            }
+
+            h1{
+                position: relative;
+                color: white;
+                top: -10px;
+                left: 1%;
+            }
+
+            .container-pedidos{
+                position: absolute;
+                left: 30%;
+                top: 20%;
+            }
+
+            table, td, tr{
+                color: #000;
+                border: 1px solid #000;
+            }
+            table{
+                position: absolute;
+                left: -480px;
+                top: -102px;
+                width: 1600px;
+                text-align: center;
+                table-layout: fixed;
+            }
+
+            table.linhasAlternadas {
+                border-collapse: collapse; /* CSS2 */
+                background: whitesmoke;
+                border: solid rgb(246, 250, 246) 1px;
+            }
+ 
+            table.linhasAlternadas tr:nth-child(even) /* CSS3 */ {
+                background: #F0FFFF;
+            }
+
+            button{
+                background-color: rgb(255, 51, 0);
+                color: white;
+                border: 1px;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+        
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="container-title">
+                    <h1>Pedidos</h1>
+                </div>
+
+                <div class="container-pedidos">
+                    <table class="linhasAlternadas">
+                        <colgroup>
+                            <col span="4" />
+                        </colgroup>
+                        <tr>
+                            <tr>
+                                <th>Email</th>
+        
+                                <th>Produto</th>
+        
+                                <th>Cep</th>
+
+                                <th>Rua</th>
+
+                                <th>Bairro</th>
+
+                                <th>N residência</th>
+
+                                <th>Complemento</th>
+
+                                <th>Remoção</th>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td> 
+                                    {% for email in todos_pedidos %}
+                                        {{ email["Email"] }}</br>
+                                    {% endfor %}
+                                </td>
+                                    
+                                <td>
+                                    {% for produto in todos_pedidos %}
+                                        {{ produto["Produto"] }}</br>
+                                    {% endfor %}
+                                </td>
+                                    
+                                <td>
+                                    {% for cep in todos_pedidos %}
+                                        {{ cep["Cep"] }}</br>
+                                    {% endfor %}
+                                </td>
+
+                                <td>
+                                    {% for rua in todos_pedidos %}
+                                        {{ rua["Rua"] }}</br>
+                                    {% endfor %}
+                                </td>
+                                    
+                                <td>
+                                    {% for bairro in todos_pedidos %}
+                                        {{ bairro["Bairro"] }}</br>
+                                    {% endfor %}
+                                </td>
+
+                                <td>
+                                    {% for num_resi in todos_pedidos %}
+                                        {{ num_resi["Numero de residencia"] }}</br>
+                                    {% endfor %}
+                                </td>
+
+                                <td>
+                                    {% for complemento in todos_pedidos %}
+                                        {{ complemento["Complemento"] }}</br>
+                                    {% endfor %}
+                                </td>
+                                    
+                                <td>
+                                    {% for info in todos_pedidos %}
+                                        <form action='remove-pedido/{{ info["Email"] }}/{{ info["Produto"] }}' method="post">
+                                            <button type="submit">Remover pedido</button></br>
+                                        </form>
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        </tr>
+                    </table>
+                </div>
+            </nav>
+        </header>
+    </body>
+</html>

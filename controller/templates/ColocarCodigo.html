@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Coloque o código</title>
+
+        <link rel="stylesheet" href="style.css">
+        
+        <style>
+            body{
+                background-color:ghostwhite;
+            }
+
+            .title_codigo{
+                position: absolute;
+                left: 20%;
+                font-size: 50px;
+            }
+
+            dialog{
+                position: absolute;
+                left: 2%;
+                top: 30%;
+                width: 20%;
+                height: 20%;
+                border-color: whitesmoke;
+                border-radius: 10px;
+                box-shadow: 0 0 0 .1em rgb(0 0 0 / .3);
+            }
+
+            h5{
+                color: red;
+            }
+        </style>
+
+        <script>
+            function Click(){
+                var texto = document.getElementById("error");
+
+                texto.innerHTML =  ""
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="container_coloquecodigo">
+                    <h1 class="title_codigo">Coloque o código que mandamos no seu email</h1>
+                    <dialog open>
+                        <form action="/verificando-atheunt-code" method="post">
+                            <h1>Coloque o código</h1>
+
+                            <input type="text" name="input_codigo" placeholder="Coloque o código que enviamos no seu email" onkeyup="Click()">
+
+                            <button type="submit">Verificar código</button>
+                            
+                            <h5 id="error">{{ error }}</h5>
+                        </form>
+                    </dialog>
+                </div>    
+            </nav>
+        </header>
+        
+    </body>
+</html>

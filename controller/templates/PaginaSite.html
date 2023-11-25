@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Empório</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <script src="notify.min.js"></script>
+
+        <style>
+            input.input_image{
+                width: 2%;
+                position: absolute;
+                top: 19%;
+                left: 45%;
+                cursor: pointer;
+            }
+
+            dialog{
+                width: 30%;
+                height: 50%;
+            }
+
+            div.container{
+                position: relative;
+                left: -7px;
+                top: -20px;
+                width: 200%;
+                height: 50%;
+                background-color: wheat;
+            }
+
+            .temperos_input{
+                position: absolute;
+                top: 15%;
+                left: 25%;
+                border-radius: 100%;
+                width: 5%;
+                height: 8%;
+                margin: 10%;
+            }
+
+            h3.temp{
+                position: absolute;
+                left: 34.7%;
+                top: 42%;
+            }
+
+            .queijos_input{
+                position: absolute;
+                top: 15%;
+                left: 34%;
+                border-radius: 100%;
+                width: 5%;
+                height: 8%;
+                margin: 10%;
+            }
+
+            h3.quei{
+                position: absolute;
+                top: 42%;
+                left: 44.5%;
+            }
+
+            .graos_input{
+                position: absolute;
+                top: 15%;
+                left: 43%;
+                border-radius: 100%;
+                width: 5%;
+                height: 8%;
+                margin: 10%;
+            }
+
+            h3.graos{
+                position: absolute;
+                top: 43%;
+                left: 54%;
+            }
+
+            .ervas_input{
+                position: absolute;
+                top: 15%;
+                left: 52%;
+                border-radius: 100%;
+                width: 5%;
+                height: 8%;
+                margin: 10%;
+                border: 1px solid black
+            }
+
+            h3.ervas{
+                position: absolute;
+                top: 42%;
+                left: 63.3%;
+            }
+
+            .input_exit{
+                position: absolute;
+                top: 2%;
+                left: 95%;
+                height: 20px;
+            }
+
+            a{
+                position: relative;
+                top: 10px;
+                left: 40px;
+                display: block;
+                width: 150px;
+                height: 35px;
+                line-height: 40px;
+                padding: 10px 4px;
+                margin: 20px;
+                background-color: #000;
+                cursor: pointer;
+                color: #FFF;
+                border-radius: 5px;
+                text-decoration: none;
+                text-align: center;
+                font-weight: bold;
+                font-family: Arial;
+                font-size: small;
+            }
+
+            h5{
+                position: relative;
+                top: -35px;
+                left: 48.5%;
+                font-size: x-large;
+            }
+
+            .button-remove{
+                border: none;
+                color: white;
+                background-color: red;
+                border-radius: 4px;
+                cursor: pointer;
+                width: 80px;
+                height: 20px;
+            }
+
+            .button-comprar{
+                border: none;
+                color: white;
+                background-color: green;
+                border-radius: 10px;
+                width: 150px;
+                height: 20px;
+                cursor: pointer;
+            }
+
+            .button-clear{
+                border: none;
+                color: white;
+                background-color: rgb(128, 26, 0);
+                border-radius: 10px;
+                width: 150px;
+                height: 20px;
+                cursor: pointer;
+            }
+
+            .buttons-comprar-apagar-cash{
+                display: flex;
+                flex-direction: row;
+                padding-top: 20%;
+                padding-left: 27%;
+                cursor: pointer;
+            }
+
+            .caixa-de-todos-os-produtos{
+                display: flex;
+                flex-direction: row;
+                padding-left: 10%;
+                padding-top: 10%;
+            }
+
+            .container_todos_os_produtos{
+                position: absolute;
+                top: 360px;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+
+            .h1_carrinho{
+                position: absolute;
+                top: 30%;
+                left: 19%;
+                font-size: 50px;
+            }
+
+            .form-carrinho{
+                display: flex;
+                flex-direction: row;
+                margin: 20px;
+
+            }
+
+            .imagem-produto-carrinho{
+                width: 100px;
+                height: 100px;
+                border-radius: 10px;
+            }
+
+            .informacoes-produtos-carrinho{
+                display: flex;
+                flex-direction: row;
+                margin: 10px 10px;
+                padding-top: 25px;
+            }
+            
+            .logo_loja{
+                position: absolute;
+                width: 100px;
+            }
+
+            h2{
+                position: relative;
+                left: 4%;
+                top: 30px;
+            }
+
+            .imagem-todos-produtos{
+                width: 200px;
+            }
+
+            .caixa-de-todos-os-produtos div{
+                display: flex;
+                flex-direction: column;
+                background-color: #d3d3d3;
+                width: 300px;
+                border-radius: 30px;
+            }
+
+            .caixa-de-todos-os-produtos img{
+                position: relative;
+                left: 37px;
+                height: 200px;
+                top: 15px;
+                border-radius: 20px;
+            }
+
+            .caixa-de-todos-os-produtos label{
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                top: 20px;
+                left: 80px;
+            }
+
+            .user{
+                position: absolute;
+                top: -90%;
+                left: 40%;
+                background-color: #dfcdcd;
+                width: 400px;
+                height: 650px;
+                border-radius: 20px;
+                transition: top 1s linear;
+                z-index: 10;
+            }
+
+            .user h1{
+                position: relative;
+                left: 30px;
+            }
+
+            .user input{
+                width: 220px;
+                position: relative;
+                left: 30px;
+                outline: none;
+            }
+
+            .user button{
+                position: relative;
+                width: 150px;
+                height: 40px;
+                left: -200px;
+                top: 50px;
+                cursor: grab;
+
+            }
+        </style>
+
+        <script>
+            function Carrinho(){
+                const modal = document.querySelector("dialog");
+
+                modal.showModal();
+            }
+
+            function Fechar(){
+                const modal = document.querySelector("dialog");
+
+                modal.close()
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <header>
+            {% set passed = get_flashed_messages() %}
+
+            <div class="container">
+                <form action="emporio" method="get">
+                    <input type="image" src="{{ url_for('static', filename='logo_loja.png') }}"  class="logo_loja">
+                </form>
+                
+                <h2>Empório serrana</h2>
+
+                <input type="image" onclick="Animation_Box()" src="{{ url_for('static', filename='avatar.png') }}"  style="position: absolute; top: 0px; left: 1260px; width: 100px;">
+
+                <div class="carrinho">
+                    <h5>{{ total_produtos_carrinho_conta }}</h5>
+                    
+                    <input type="image" class="input_image" src="{{ url_for('static', filename='carrinho_compras.png') }}" onclick="Carrinho()">
+                    
+                    <dialog>
+                        <div class="container_informações">
+                            {% if produtos_carrinho_conta == [] %}
+                                <h1 class="h1_carrinho">Carrinho vazio</h1>
+                            {% else %}
+                                {% for p in produtos_carrinho_conta %}
+                                    <form action="remover/{{ p[0][0] }}/{{ p[0][1] }}/{{ p[0][2] }}/{{ p[0][3] }}" method="post" class="form-carrinho">
+                                        <img src="{{ url_for('static', filename=p[0][3]) }}" class="imagem-produto-carrinho">
+                                        
+                                        <div class="informacoes-produtos-carrinho">
+                                            <label class="label-produto-carrinho">{{ p[0][0] }}</label></br>
+        
+                                            <label class="label-preco-produto-carrinho">R$ {{ p[0][1] }}</label>
+        
+                                            <label class="label-quantidade-produto-carrinho">Quantidade: {{ p[0][2] }}</label>
+
+                                            <button class="button-remove">Remover</button>
+                                        </div>
+                                    </form>
+                                {% endfor %}
+                        
+                                <div class="buttons-comprar-apagar-cash">
+                                    <label class="sum-cash" style="position: relative;  rotate: 360deg; left: -15px;">R$ {{ soma_preco_produtos_carrinho_conta }}</label>
+        
+                                    <form action="comprar-carrinho" method="post">
+                                        <button type="submit" id="button01" class="button-comprar">Comprar</button>
+                                    </form>
+                    
+                                    <form action="apagar-carrinho" method="post">
+                                        <button type="submit" id="button02" class="button-clear">Apagar carrinho</button>
+                                    </form>
+                                </div>
+                            {% endif %}
+                    
+                        </div>
+                        
+                        <div class="container_saida">
+                            <input type="image" src="https://icones.pro/wp-content/uploads/2021/08/icone-x-avec-cercle-rouge.png" class="input_exit" onclick="Fechar()">
+                        </div> 
+                    </dialog>
+                </div>
+
+                <div class="usuario">
+                    
+                </div>
+            </div>
+
+            <div class="recomendacaoes_produtos">
+                <h1 style="position: relative; left: 40%; top: -10px;">Recomendações da loja: </h1>
+                <hr>
+
+                <form action="temperos" method="get">
+                    <input type="image" class="temperos_input" src="https://cdn.deliway.com.br/blog/base/381/2f9/a59/tipos-de-temperos.jpg">
+                
+                    <h3 class="temp">Temperos</h3>
+                </form>
+
+                <form action="queijos" method="get">
+                    <input type="image" class="queijos_input" src="https://laticiniosholandes.com.br/wp-content/uploads/2020/06/maxresdefault-1024x576-1.jpg"> 
+                    
+                    <h3 class="quei">Queijos</h3>
+                </form>
+
+                <form action="graos" method="get">
+                    <input type="image" class="graos_input" src="https://agropos.com.br/wp-content/uploads/2022/09/Graos-e-Cereais.jpg">
+                
+                    <h3 class="graos">Grãos</h3>
+                    
+                </form>
+
+                <form action="ervas" method="get">
+                    <input type="image" class="ervas_input" src="https://imageswscdn.wslojas.com.br/files/24534/cha-erva-cidreira-1-kg-pacote-81-1.jpg">
+
+                    <h3 class="ervas">Ervas</h3> 
+                </form>        
+            </div>
+
+            <!--Verificar se o usuario tem o endereço cadastrado-->
+            {% if passed[0] == "error_endereco" %}
+                <script>
+                    swal.fire({text: "Para efetuar alguma compra é preciso cadastrar seu endereço", icon: "error"})
+                </script>
+            {% endif %}
+
+            <div class="container_todos_os_produtos">
+                {% for produto in todos_os_produtos_site %}
+                    <div class="container_produtos">
+                        <div class="caixa-de-todos-os-produtos">
+                            <div>
+                                <img src="{{ url_for('static', filename=produto[3]) }}" class="imagem-todos-produtos">
+
+                                <label>{{ produto[0] }}</label>
+                                <label>R$ {{ produto[1] }}</label>
+                                <label>Quantidade: {{ produto[2] }}</label>
+                                    
+                                <a href="prod/{{ produto[0] }}/{{ produto[1] }}/{{ produto[2] }}">
+                                    Comprar
+                                </a>
+                                    
+                                <a href="carrinho/{{ produto[0] }}/{{ produto[1] }}/{{ produto[2] }}/{{ produto[3] }}">
+                                    Adicionar no carrinho
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="user">
+                <input type="image" src="https://icones.pro/wp-content/uploads/2021/08/icone-x-avec-cercle-rouge.png" onclick="Fechar_02()" style="position: relative; top: 10px; left: 367px; width: 20px;">
+                
+                {% if not endereco_conta == None %}
+                    <form action="trocar-endereco" method="post">
+                        <h1>Cep</h1>
+
+                        <input type="text" placeholder="00000-000" name="input_cep_novo" id="cep" value="{{ passed[0] }}" maxlength="8" disabled>
+
+                        <h1>Rua</h1>
+
+                        <input type="text" placeholder="Cadastre sua rua" name="input_rua_novo" id="rua" value="{{ passed[1] }}" disabled>
+
+                        <h1>Bairro</h1>
+
+                        <input type="text" placeholder="Cadastre seu bairro" name="input_bairro_novo" id="bairro" value="{{ passed[2] }}" disabled>
+
+                        <h1>Número de residência</h1>
+
+                        <input type="text" placeholder="Cadastra seu Número de residência" name="input_numero_residencia_novo" id="residencia" value="{{passed[4]}}" disabled>
+
+                        <h1>Complemento</h1>
+
+                        <input type="text" placeholder="Opcional" name="input_complemento_novo" id="complemento" value="{{ passed[3] }}" disabled>
+
+                        <button type="submit" id="button_recadastrar" disabled>Recadastrar endereço</button>
+
+                        <button type="button" onclick="Redefinir()" id="redefinir" style="position: relative; left: 32px; top: 60px;" >Redefinir</button>
+                    </form>
+
+                        <script>
+                            var cep = document.getElementById("cep")
+
+                            var rua = document.getElementById("rua")
+
+                            var bairro = document.getElementById("bairro")
+
+                            var residencia = document.getElementById("residencia")
+
+                            var complemento = document.getElementById("complemento")
+
+                            var button_recadastrar = document.getElementById("button_recadastrar")
+
+                            var button_redefinir = document.getElementById("redefinir")
+
+                            function Redefinir(){
+                                cep.disabled = false
+                                cep.value = ""
+                                rua.disabled = false
+                                rua.value = ""
+                                bairro.disabled = false
+                                bairro.value = ""
+                                residencia.disabled = false
+                                residencia.value = ""
+                                complemento.disabled = false
+                                complemento.value = ""
+                                redefinir.disabled = true
+                                button_recadastrar.disabled = false
+                            }
+                        </script>
+                    {% else %}
+                        <form action="cadastrar-endereco" method="post">
+
+                            <h1>Cep</h1>
+
+                            <input type="text" placeholder="00000-000" name="input_cep" maxlength="8">
+
+                            <h1>Rua</h1>
+
+                            <input type="text" placeholder="Cadastre sua rua" name="input_rua">
+
+                            <h1>Bairro</h1>
+
+                            <input type="text" placeholder="Cadastre seu bairro" name="input_bairro">
+
+                            <h1>Número de residência</h1>
+
+                            <input type="text" placeholder="Cadastra seu Número de residência" name="input_numero_residencia">
+
+                            <h1>Complemento</h1>
+
+                            <input type="text" placeholder="Opcional" name="input_complemento">
+
+                            <button type="submit">Cadastrar endereço</button>
+
+                            <h6 id="erro" style="position:  relative; color: red; left: 190px;"></h6>
+                        </form>
+                    {% endif %}
+            </div>
+        </header>    
+    </body>
+
+    <script>
+        let formulario = document.querySelector(".user")
+
+        function Animation_Box(){
+            formulario.style.top = "30%"  
+        }
+
+        function Fechar_02(){
+            formulario.style.top = "-90%" 
+        }
+    </script>
+
+    {% if passed[0] == "campo de cep vazio" %}
+        <script>
+            let container_cep = document.querySelector(".user");
+
+            var erro = document.getElementById("erro");
+
+            container_cep.style.top = "30%";
+
+            erro.innerHTML = "O campo de cep está vazio"
+        </script>
+    
+    {% elif passed[0] == "campo de rua vazio" %}
+        <script>
+            let container_cep = document.querySelector(".user");
+
+            var erro = document.getElementById("erro");
+
+            container_cep.style.top = "30%";
+
+            erro.innerHTML = "O campo de rua está vazio"
+        </script>
+    
+    {% elif passed[0] == "campo de bairro vazio" %}
+        <script>
+            let container_cep = document.querySelector(".user");
+
+            var erro = document.getElementById("erro");
+
+            container_cep.style.top = "30%";
+
+            erro.innerHTML = "O campo de bairro está vazio"
+        </script>
+    
+    {% elif passed[0] == "campo de numero residencia vazio" %}
+        <script>
+            let container_cep = document.querySelector(".user");
+
+            var erro = document.getElementById("erro");
+
+            container_cep.style.top = "30%";
+
+            erro.innerHTML = "O campo de número de residência está vazio"
+        </script>
+    
+    {% elif passed[0] == "cep pequeno" %}
+        <script>
+            let container_cep = document.querySelector(".user");
+
+            var erro = document.getElementById("erro");
+
+            container_cep.style.top = "30%";
+
+            erro.innerHTML = "O campo de cep tem que ter 8 caracteres"
+        </script>
+    {% endif %}
+</html>

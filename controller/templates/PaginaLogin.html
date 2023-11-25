@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Entrar</title>
+
+        <link rel="stylesheet" href=".css">
+
+        <style>
+            body{
+                background-color:ghostwhite;
+            }
+
+            dialog{
+                position: absolute;
+                top: 15%;
+                width: 30%;
+                height: 60%;
+                border-color: whitesmoke;
+                border-radius: 10px;
+                box-shadow: 0 0 0 .1em rgb(0 0 0 / .3);
+            }
+
+            h1{
+                position: relative;
+                font-size: 300%;
+                top: 10%;
+                left: 8%;
+                font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+            }
+
+            h2{
+                position: relative;
+                left: 10%;
+            }
+
+            input{
+                width: 200px;
+                position: relative;
+                left: 10%;
+            }
+
+            a.cadastrar{
+                position: relative;
+                top: 4%;
+                left: 58%;
+            }
+
+            a.esqueci{
+                position: absolute;
+                top: 80%;
+                left: 20%;
+            }
+
+            button{
+                position: absolute;
+                top: 63%;
+                width: 206px;
+                left: 12.5%;
+                background-color: #4CAF50;
+                padding: 13px 1px;
+                color: white;
+                border: none;
+            }
+
+            h4{
+                position: absolute;
+                left: 16%;
+                top: 70%;
+                color: red;
+            }
+            
+
+        </style>
+
+        <script>
+            function InputClick(){
+                var texto = document.getElementById("error");
+
+                texto.innerHTML =  ""
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="container_login">
+                    <dialog open>
+                        <form action="logando" method="post">
+                            <h1>Entrar</h1>
+                            
+                            <h2>Email</h2>
+
+                            <input type="text" placeholder="exemplo@gmail.com" name="login_email" class="input_email" onkeyup="InputClick()">
+
+                            <h2>Senha</h2>
+
+                            <input type="password" name="login_senha" placeholder="Coloque a senha aqui" class="input_senha" onkeyup="InputClick()">
+
+                            <button type="submit" class="button_login">Entrar</button>
+                        </form>
+
+                        <a href="cadastrar" class="cadastrar">Não possui conta?</a>
+
+                        <a href="esqueci_senha/email" class="esqueci">Esqueceu a senha?</a>
+
+                        <h4 id="error">{{ error }}</h4>
+                    </dialog>
+                </div>
+            </nav>
+        </header>
+        
+    </body>
+</html>

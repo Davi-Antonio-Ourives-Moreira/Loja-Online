@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Cadastro</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            body{
+                background-color:ghostwhite;
+            }
+
+            dialog{
+                position: absolute;
+                top: 15%;
+                width: 30%;
+                height: 60%;
+                border-color: whitesmoke;
+                border-radius: 10px;
+                box-shadow: 0 0 0 .1em rgb(0 0 0 / .3);
+            }
+
+            h1{
+                position: relative;
+                font-size: 300%;
+                top: 10%;
+                left: 8%;
+                font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+            }
+
+            h2{
+                position: relative;
+                left: 10%;
+            }
+
+            input{
+                position: relative;
+                left: 10%;
+            }
+
+            a{
+                position: relative;
+                top: 4%;
+                left: 58%;
+            }
+
+            button{
+                position: absolute;
+                top: 80%;
+                width: 178px;
+                left: 12.5%;
+                background-color: #4CAF50;
+                padding: 13px 1px;
+                color: white;
+                border: none;
+            }
+
+            h4{
+                color: red;
+                position: absolute;
+                top: 85%;
+                left: 12%;
+            }
+            
+
+        </style>
+
+        <script>
+            function InputClick(){
+                var texto = document.getElementById("error");
+
+                texto.innerHTML =  ""
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="container-cadastro">
+                    <dialog open>
+                        <form action="cadastrando" method="post">
+                            <h1>Cadastrar</h1>
+                            
+                            <h2 class="name">Nome</h2>
+
+                            <input type="text" name="cadastro_user" placeholder="Nome e sobrenome" class="input_user" onkeyup="InputClick()">
+                            
+                            <h2>Email</h2>
+
+                            <input type="text" name="cadastro_email" placeholder="exemplo@gmail.com" class="input_email" onkeyup="InputClick()">
+
+                            <h2>Senha</h2>
+
+                            <input type="password" name="cadastro_senha" placeholder="Crie uma senha" class="input_senha" onkeyup="InputClick()">
+
+                            <input type="password" name="confirmar_senha" placeholder="Confirmar senha" class="input_confirmar" onkeyup="InputClick()">
+
+                            <button type="submit" class="button_cadastro">Criar conta</button>
+                        </form>
+
+                        <a href="logar" class="link_login">Já possui conta?</a>
+
+                        <h4 id="error">{{ error }}</h4>
+                    </dialog>
+                </div>
+            </nav>
+        </header>        
+    </body>
+</html>

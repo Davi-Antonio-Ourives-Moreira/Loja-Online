@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Mudar senha</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            body{
+                background-color: ghostwhite;
+            }
+            
+            .title_redefinir{
+                position: absolute;
+                left: 40%;
+                font-size: 50px;
+            }
+
+            dialog{
+                position: absolute;
+                left: 2%;
+                top: 30%;
+                width: 20%;
+                height: 28%;
+                border-color: whitesmoke;
+                border-radius: 10px;
+                box-shadow: 0 0 0 .1em rgb(0 0 0 / .3);
+            }
+            
+            h5{
+                color: red;
+            }
+        </style>
+
+        <script>
+            function Click(){
+                var texto = document.getElementById("error");
+
+                texto.innerHTML =  ""
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="container_mudancasenha">
+                    <h1 class="title_redefinir">Redefirnir senha</h1>
+                    <dialog open>
+                        <form action="/verification-mudantion-senha" method="post">
+                            <h1>Coloque uma senha nova!</h1>
+                            
+                            <input type="password" name="input_mudar_senha" placeholder="Coloque a senha nova" onkeyup="Click()">
+
+                            <h1>Confirmar senha</h1>
+
+                            <input type="password" name="input_confirmar_mudar_senha" placeholder="Confirme a senha" onkeyup="Click()">
+
+                            <button type="submit">Mudar Senha</button>
+
+                            <h5 id="error">{{ error }}</h5>
+                        </form>
+                    </dialog>
+                </div>
+            </nav>
+        </header>
+    </body>
+</html>

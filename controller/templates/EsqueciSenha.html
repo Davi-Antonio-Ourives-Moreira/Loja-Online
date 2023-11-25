@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Esqueci senha</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            body{
+                background-color:ghostwhite;
+            }
+            .title_recupere{
+                position: absolute;
+                left: 38%;
+                font-size: 50px;
+            }
+
+            dialog{
+                position: absolute;
+                left: 2%;
+                top: 30%;
+                width: 20%;
+                height: 20%;
+                border-color: whitesmoke;
+                border-radius: 10px;
+                box-shadow: 0 0 0 .1em rgb(0 0 0 / .3);
+            }
+            
+            h5{
+                color: red;
+            }
+        </style>
+
+        <script>
+            function Click(){
+                var texto = document.getElementById("error");
+
+                texto.innerHTML =  ""
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="container_esquecisenha">
+                    <h1 class="title_recupere">Recupere sua conta!</h1>
+                    <dialog open>
+                        <form action="/verification-authentiom-email" method="post">
+                            <h1>Email</h1>
+
+                            <input type="text" name="input_email_esquecisenha" placeholder="Coloque seu email aqui!" onkeyup="Click()">
+
+                            <button type="submit">Mandar email</button>
+                            
+                            <h5 id="error">{{ error }}</h5>
+                        </form>
+                    </dialog>
+                </div>
+            </nav>
+        </header>     
+    </body>
+</html>
