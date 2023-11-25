@@ -11,6 +11,7 @@
 
 # Tecnologias utilizadas:
 
+<li>HTML</li>
 <li>Python</li>
 <li>Flask</li>
 <li>Fastapi</li>
