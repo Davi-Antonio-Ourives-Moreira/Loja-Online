@@ -17,3 +17,10 @@
 <li>Pymongo</li>
 <li>Mercado pago</li>
 
+# Por que a utilização de banco de dados relacionais?
+
+<p>
+  Geralmente quando produzimos um sistema de loja online utilizamos banco de dados relacionais(sql), pois todos os dados que precisamos
+  já então definidos
+</p>
+
