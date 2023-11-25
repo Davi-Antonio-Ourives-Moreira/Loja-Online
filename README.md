@@ -8,3 +8,5 @@
   <li>Sistema de pagamentos do produto</li>
   <li>Sistema que após o usuário pagar pelo produto, esse produto vai para o site de correios</li>
 </h2>
+
+# Tecnologias utilizadas:
