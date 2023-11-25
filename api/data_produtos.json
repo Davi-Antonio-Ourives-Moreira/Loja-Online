@@ -1,0 +1,122 @@
+{
+    "Queijos": [
+        {
+            "Produto": "Queijo meia-cura", 
+            "Preço": 48,
+            "Peso": "1kg",
+            "Imagem": "imagem_meia_cura.jpg"
+        },
+
+        {
+            "Produto": "Queijo curado",
+            "Preço": 55,
+            "Peso": "1kg",
+            "Imagem": "imagem_queijo_curado.jpeg"
+        },
+
+        {
+            "Produto": "Queijo fresco",
+            "Preço": 48,
+            "Peso": "1kg",
+            "Imagem": "imagem_queijo_fresco.jpg"
+        },
+
+        {
+            "Produto": "Queijo gongorzola",
+            "Preço": 20,
+            "Peso": "500g",
+            "Imagem": "imagem_queijo_gongorzola.jpeg"
+        },
+
+        {
+            "Produto": "Queijo palitinho",
+            "Preço": 15,
+            "Quantidade": "8",
+            "Imagem": "imagem_queijo_palitinho.jpeg"
+        }
+    ],
+    
+    "Temperos": [
+        {
+            "Produto": "Pimenta do reino",
+            "Preço": 8,
+            "Peso": "100g",
+            "Imagem": "imagem_pimenta_reino.jpg"
+        },
+
+        {
+            "Produto": "Edu Guedes",
+            "Preço": 8,
+            "Peso": "100g",
+            "Imagem": "imagem_edu_guedes.png"
+        },
+
+        {
+            "Produto": "Limão pepper",
+            "Preço": 8,
+            "Peso": "100g",
+            "Imagem": "imagem_lemon_pepper.jpg"
+        },
+
+        {
+            "Produto": "Colorau",
+            "Preço": 8,
+            "Peso": "100g",
+            "Imagem": "imagem_colorau.jpg"
+        },
+
+        {
+            "Produto": "Orégano",
+            "Preço": 10,
+            "Peso": "100g",
+            "Imagem": "imagem_oregano.jpeg"
+        }
+    ],
+
+    "Ervas": [
+        {
+            "Produto": "Erva-cidreira",
+            "Preço": 10,
+            "Peso": "200g",
+            "Imagem": "imagem_erva_cidreira.jpg"
+        },
+
+        {
+            "Produto": "Camomila",
+            "Preço": 8,
+            "Peso": "100g",
+            "Imagem": "imagem_camomila.jpg"
+        },
+
+        {
+            "Produto": "Capim limão",
+            "Preço": 9,
+            "Peso": "100g",
+            "Imagem": "imagem_capim_limao.jpg"
+        }
+    ],
+
+    "Grãos": [
+        
+        {
+            "Produto": "Feijão",
+            "Preço": 25,
+            "Peso": "1kg",
+            "Imagem": "imagem_feijao.jpeg"
+        },
+
+        {
+            "Produto": "Feijão preto",
+            "Preço": 30,
+            "Peso": "1kg",
+            "Imagem": "imagem_feijao_preto.jpg"
+        },
+
+        {
+            "Produto": "Milho de pipoca",
+            "Preço": 15,
+            "Peso": "1kg",
+            "Imagem": "imagem_milho_pipoca.jpeg"
+        }
+    ]
+}
